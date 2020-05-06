@@ -2,10 +2,9 @@ from typing import List
 from Scanner import Scanner
 
 class Parser:
-	def __init__(self, a: List):
-		self.s = Scanner(a)
-		self.tokens = self.s.scan()
-		self.tokenValues = self.s.list()
+	def __init__(self, tokens, tokenValues):
+		self.tokens = tokens
+		self.tokenValues = tokenValues
 		self.currentTokenPosition = 0
 	   
 	def parse(self): 
@@ -42,7 +41,7 @@ class Parser:
 				self.currentTokenPosition += 1
 			else:
 				raise Exception()
-			self.expr(level)
+			self.expr(level + 1)
 
 		elif self.match('read'):
 			self.print_with_indent('<read>', level + 1)
