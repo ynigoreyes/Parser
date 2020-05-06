@@ -32,9 +32,9 @@ class TestScannerFunctionality(unittest.TestCase):
 
     def test_for_print_on_write(self):
         """
-        write 1 + 2
+        write 10 + 12
         """
-        parser = Parser('write 1 + 2')
+        parser = Parser('write 10 + 12')
         parser.parse()
 
     def test_for_print_on_comments(self):
@@ -42,13 +42,13 @@ class TestScannerFunctionality(unittest.TestCase):
         /**
           * With some kind of comment
           */
-        write 1 + 2
+        write 0 + 0
         """
         parser = Parser("""
         /**
           * With some kind of comment
           */
-        write 1 + 2
+        write 0 + 0
         """)
         parser.parse()
             
