@@ -3,6 +3,12 @@ from Scanner import Scanner
 from InvalidTokenExpection import InvalidTokenExpection
 
 class Parser:
+	"""
+	This Parser takes advantage of recusive decent
+	This is when we build the XML tree from top down, starting with the Program tag
+	As we process the program tag, we call the stmt_list function which is what
+	the rules say. Each rules needs a function and that function handles the printing of that tag
+	"""
 	def __init__(self, content):
 		tokens, tokenValues = Scanner.scan(content)
 		self.tokens = tokens
