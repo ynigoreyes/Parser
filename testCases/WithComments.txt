@@ -1,0 +1,4 @@
+/**
+ * With some kind of comment
+ */
+write 1 + 2
